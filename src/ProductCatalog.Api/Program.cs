@@ -50,9 +50,9 @@ aplicacion.UseSwaggerUI(opciones =>
     opciones.DocumentTitle = "Catálogo de productos";
     opciones.InjectStylesheet("/swagger-ui/catalogo.css");
 });
-aplicacion.MapGet("/", () => Results.Redirect("/swagger"));
-aplicacion.MapGet("/api-docs", () => Results.Redirect("/swagger"));
-aplicacion.MapGet("/health", () => Results.Ok(new { estado = "Disponible" }));
+aplicacion.MapGet("/", () => Results.Redirect("/swagger")).ExcludeFromDescription();
+aplicacion.MapGet("/api-docs", () => Results.Redirect("/swagger")).ExcludeFromDescription();
+aplicacion.MapGet("/health", () => Results.Ok(new { estado = "Disponible" })).ExcludeFromDescription();
 aplicacion.MapControllers();
 
 aplicacion.Run();
