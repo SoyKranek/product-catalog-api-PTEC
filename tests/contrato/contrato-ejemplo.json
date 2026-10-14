@@ -1,0 +1,20 @@
+{
+  "producto": {
+    "productoId": "3f1c2a40-6b2e-4d1a-9c0e-1a2b3c4d5e6f",
+    "nombre": "Café molido",
+    "descripcion": "Bolsa de 500 gramos",
+    "precioUnitario": 18500.5,
+    "cantidadExistencias": 10,
+    "fechaCreacionUtc": "2026-10-13T12:00:00Z",
+    "fechaActualizacionUtc": "2026-10-13T12:00:00Z"
+  },
+  "pagina": {
+    "elementos": [],
+    "numeroPagina": 1,
+    "tamanoPagina": 20,
+    "totalRegistros": 0
+  },
+  "ajuste": {
+    "cambioCantidad": -2
+  }
+}
