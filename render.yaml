@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: product-catalog-api
+    runtime: docker
+    plan: free
+    healthCheckPath: /health
+    envVars:
+      - key: ASPNETCORE_ENVIRONMENT
+        value: Production
+      - key: ConnectionStrings__ProductCatalog
+        fromDatabase:
+          name: product-catalog-db
+          property: connectionString
+databases:
+  - name: product-catalog-db
+    plan: free
+    databaseName: product_catalog
+    user: product_catalog
