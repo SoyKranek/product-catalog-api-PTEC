@@ -1,0 +1,86 @@
+:root {
+  --morado: #6b2c86;
+  --morado-oscuro: #4e1d63;
+  --magenta: #9a2f78;
+  --crema: #f6f1e8;
+  --tinta: #3d2448;
+}
+
+body {
+  background: var(--crema);
+}
+
+.swagger-ui .topbar {
+  background: var(--morado);
+  border-bottom: 4px solid var(--magenta);
+}
+
+.swagger-ui .topbar .download-url-wrapper {
+  display: none;
+}
+
+.swagger-ui .topbar-wrapper img,
+.swagger-ui .topbar-wrapper svg {
+  display: none;
+}
+
+.swagger-ui .topbar-wrapper .link::after {
+  content: "Catálogo de productos";
+  color: #fff;
+  font-size: 1.15rem;
+  font-weight: 650;
+  letter-spacing: 0.01em;
+}
+
+.swagger-ui .info .title,
+.swagger-ui .info h2,
+.swagger-ui .opblock-tag {
+  color: var(--morado-oscuro);
+}
+
+.swagger-ui .info p,
+.swagger-ui .info li,
+.swagger-ui,
+.swagger-ui .opblock-description-wrapper p,
+.swagger-ui table thead tr td,
+.swagger-ui table thead tr th,
+.swagger-ui .parameter__name,
+.swagger-ui .response-col_status {
+  color: var(--tinta);
+}
+
+.swagger-ui .scheme-container {
+  background: transparent;
+  box-shadow: none;
+}
+
+.swagger-ui .opblock.opblock-post {
+  border-color: var(--magenta);
+  background: rgba(154, 47, 120, 0.06);
+}
+
+.swagger-ui .opblock.opblock-get {
+  border-color: var(--morado);
+  background: rgba(107, 44, 134, 0.06);
+}
+
+.swagger-ui .opblock.opblock-put,
+.swagger-ui .opblock.opblock-patch,
+.swagger-ui .opblock.opblock-delete {
+  border-color: var(--morado-oscuro);
+}
+
+.swagger-ui .btn.execute {
+  background: var(--magenta);
+  border-color: var(--magenta);
+}
+
+.swagger-ui .btn.execute:hover {
+  background: var(--morado-oscuro);
+  border-color: var(--morado-oscuro);
+}
+
+.swagger-ui .btn.authorize {
+  color: var(--morado);
+  border-color: var(--morado);
+}

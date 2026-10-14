@@ -1,4 +1,5 @@
 using FluentValidation;
+using Microsoft.OpenApi.Models;
 using ProductCatalog.Api.Errores;
 using ProductCatalog.Application.Productos;
 using ProductCatalog.Infrastructure;
@@ -27,7 +28,12 @@ constructor.Services.AddControllers();
 constructor.Services.AddEndpointsApiExplorer();
 constructor.Services.AddSwaggerGen(opciones =>
 {
-    opciones.SwaggerDoc("v1", new() { Title = "Catálogo de productos", Version = "v1" });
+    opciones.SwaggerDoc("v1", new OpenApiInfo
+    {
+        Title = "Catálogo de productos",
+        Version = "v1",
+        Description = "API para administrar el catálogo de productos y sus existencias."
+    });
 });
 
 var aplicacion = constructor.Build();
@@ -35,11 +41,14 @@ var aplicacion = constructor.Build();
 await aplicacion.Services.GetRequiredService<InicializadorBaseDatos>().InicializarAsync(CancellationToken.None);
 
 aplicacion.UseExceptionHandler();
+aplicacion.UseStaticFiles();
 aplicacion.UseSwagger();
 aplicacion.UseSwaggerUI(opciones =>
 {
     opciones.SwaggerEndpoint("/swagger/v1/swagger.json", "Catálogo de productos v1");
     opciones.RoutePrefix = "swagger";
+    opciones.DocumentTitle = "Catálogo de productos";
+    opciones.InjectStylesheet("/swagger-ui/catalogo.css");
 });
 aplicacion.MapGet("/", () => Results.Redirect("/swagger"));
 aplicacion.MapGet("/api-docs", () => Results.Redirect("/swagger"));
