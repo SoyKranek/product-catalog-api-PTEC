@@ -98,4 +98,7 @@ Los errores usan `type`, `title`, `status` y `detail`.
 
 Imagen del `Dockerfile`, puerto **8080**. En Render el blueprint es `render.yaml`: servicio web gratis y PostgreSQL. El plan gratis puede dormir el servicio; la primera petición después de un rato tarda más.
 
-URL pública: pendiente de publicar en Render.
+URL pública: https://product-catalog-api-w8tg.onrender.com
+
+Swagger: https://product-catalog-api-w8tg.onrender.com/swagger  
+Salud: https://product-catalog-api-w8tg.onrender.com/health
