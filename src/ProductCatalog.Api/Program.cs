@@ -41,6 +41,8 @@ aplicacion.UseSwaggerUI(opciones =>
     opciones.SwaggerEndpoint("/swagger/v1/swagger.json", "Catálogo de productos v1");
     opciones.RoutePrefix = "swagger";
 });
+aplicacion.MapGet("/", () => Results.Redirect("/swagger"));
+aplicacion.MapGet("/api-docs", () => Results.Redirect("/swagger"));
 aplicacion.MapGet("/health", () => Results.Ok(new { estado = "Disponible" }));
 aplicacion.MapControllers();
 
